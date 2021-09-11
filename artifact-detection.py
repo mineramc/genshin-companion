@@ -1,29 +1,45 @@
-import cv2 as cv
+import cv2
+import pytesseract
+import os
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import numpy as np
-from matplotlib import pyplot as plt
 
-img = cv.imread('messi5.jpg',0)
-img2 = img.copy()
-template = cv.imread('template.jpg',0)
-w, h = template.shape[::-1]
-# All the 6 methods for comparison in a list
-methods = ['cv.TM_CCOEFF', 'cv.TM_CCOEFF_NORMED', 'cv.TM_CCORR',
-            'cv.TM_CCORR_NORMED', 'cv.TM_SQDIFF', 'cv.TM_SQDIFF_NORMED']
-for meth in methods:
-    img = img2.copy()
-    method = eval(meth)
+def detect_artifact(image_path):
+    pytesseract.pytesseract.tesseract_cmd = os.getcwd() + '\\tesseract\\tesseract.exe'
+
+    img = cv2.imread(image_path, 0)
+    template = cv2.imread('artifact-template.png', 0)
+    w, h = template.shape[::-1]
+    method = eval('cv2.TM_SQDIFF')
+
     # Apply template Matching
-    res = cv.matchTemplate(img,template,method)
-    min_val, max_val, min_loc, max_loc = cv.minMaxLoc(res)
-    # If the method is TM_SQDIFF or TM_SQDIFF_NORMED, take minimum
-    if method in [cv.TM_SQDIFF, cv.TM_SQDIFF_NORMED]:
-        top_left = min_loc
-    else:
-        top_left = max_loc
-    bottom_right = (top_left[0] + w, top_left[1] + h)
-    cv.rectangle(img,top_left, bottom_right, 255, 2)
-    plt.subplot(121),plt.imshow(res,cmap = 'gray')
-    plt.title('Matching Result'), plt.xticks([]), plt.yticks([])
-    plt.subplot(122),plt.imshow(img,cmap = 'gray')
-    plt.title('Detected Point'), plt.xticks([]), plt.yticks([])
-    plt.suptitle(meth)
+    res = cv2.matchTemplate(img,template,method)
+    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+    top_left = min_loc
+    crop_img = img[top_left[1]:top_left[1]+h, top_left[0]:top_left[0]+w]
+
+    pil_img = Image.fromarray(cv2.cvtColor(crop_img, cv2.COLOR_BGR2RGB))
+    sharpened1 = pil_img.filter(ImageFilter.SHARPEN)
+    contrast = ImageEnhance.Contrast(sharpened1)
+    pil_img = contrast.enhance(2)
+    crop_img = cv2.cvtColor(np.array(pil_img), cv2.COLOR_RGB2BGR)
+
+    cv2.imshow("cropped", crop_img)
+    cv2.waitKey(0)
+
+    d = pytesseract.image_to_data(crop_img, output_type=pytesseract.Output.DICT)
+    print(d.keys())
+    text = []
+    n_boxes = len(d['text'])
+    for i in range(n_boxes):
+        if int(float(d['conf'][i])) > 20:
+            text.append(d['text'][i])
+            (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
+            crop_img = cv2.rectangle(crop_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    print(text)
+    cv2.imshow('img', crop_img)
+    cv2.waitKey(0)
+
+
+detect_artifact('test2.png')
+detect_artifact('Main artifact Page.png')
