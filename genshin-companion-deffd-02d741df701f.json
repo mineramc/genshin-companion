@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "genshin-companion-deffd",
+  "private_key_id": "02d741df701f66f8287c6f91ec4368654cce6fdc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDWKNG23rctUn4E\nwZGMqrBm3nON1vqK8DRvdXO9djnvS/xZF/VgnC1a9292MCQwcCjLUqvGMjZUqGV0\nnuGl285RfrHRvQCHUGYNkOHW2tiGiq057LPCXrUm2K6mYg0/mL7BGui2ZMtMsEnS\nqEoyfCcziDQFScimQU0KXnE/8voyIzvRKLZhS8oQckoCX/QEx1sVobOOH2ksIFdQ\nwwRfA3Oj3BntpEnsIydVw7bE9lpyb10ogkx+NewgY9i/metGtuL1tfdyN+fBQr0T\nKxygRgbE7tI6jCFwjWOYon2kjSZG7gezmEirroPJWwSQk7NjKJ3uR3dR7kN4fzD/\nIk0kwEEbAgMBAAECggEAYdanLIDmNZX0zY5zRMzsJyrkpr26m4PuqKcDd+CNyjWw\nNTG9X+Qp0l+tc9S9i8WJ1Y3QvQzOhnGiXBuD4iafxNp5OWU72xXPcc4pZuN3PUwY\npJhvbVKgNv2SGKA+Bjptl0IIY997g28cYtmQgCz5KdFFVs8lFFNL83s/COSkCgf5\nwyRThv85aNNa3I0zb218kZbyaf4hgHfSJC4iYHfbhEGaOKn9sdx4EMYKG1Ha+99x\n/XYe/ncBfi2tf8XFNpYBzP+t+v4wMLlmsn/VZMnJZmmYZtlteSBY4E4Ds06ek1Qu\n9cJ5yE7Q5mm1/ILZDILvzeF9jpyWACfXdIHy5J5qnQKBgQDtTu6/qRusP1Y2Bab4\nQfllEKhArpbOs8fBVqvPlkzHgeM+y44ph/rN4w4WNt1ahudsZP9NN7At6iDiOZWh\nyJcEbOWnF3l+ZT3DHpRAMRDyVxxApfkj8iCz7sogwnBzA8O+GstqId1ia662CQNO\nfArxpWT+S0Nw0RJs2+2+OiyTBQKBgQDnBx1CTAmV27ScAYtfPPwOQBQCmqXWPo1G\nrV7s8HhtKKljyBjZ21wvqSX2QGbHcpvvvz1pN5XHieuiEGwa1tg+lG3xZdG6uHKC\ntJKwf2iaLNuCdJOAHtaOTZ5OadUZ4ia/3XAzbFfdMl6CLhHOe6W9WBa9wJ4nly0n\nwzUt08H9nwKBgQDUiYU7EvI96twDtjw8zJnY8no+tB9NMacOedmXKj3J0YL9ksHY\nYHk4PMs5ChpmIbzTUAF33xBjjvW0p25kX4sh44YriNK/aV1Pi+urMkbDRVGAdSYW\nE51Gie9uN7cOy6hccxMMExh8NYVcc+YKPP5wPnmdZzsXp6ig5rifTurtIQKBgGIR\n1w3JkVgYB7chwLQRAz5ZXSUt2K/1pasW9XDHM5fC5wUAb+wq/hsNRpweAoMv15oS\nKFN90Qr/NRN6vSk3glwuTe1nN3x3x8RMOujJbPHlkNjz+5krfhCySj0nF9sA8UoJ\nChQKLdIsC4pfXBe2zUhvGFg8Z+aOehCjAPQPLA4pAoGAVoBRpMsZX8xaRSiVjJEb\nwb6K7PUN8zFZIMCiJ86vXhgQupeKMS5UW+RsrTgJf24U6HMqtAa1ysKUdO99cgUK\n1WlZuOIKZYhOsgpsPfVRgOORo4TUEA+tvlJqN4lfbnK4bzFfKofv0zH8X3EiYvWP\nwrriw6pQ/3DRpmM4nS7FGkA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "normaluser@genshin-companion-deffd.iam.gserviceaccount.com",
+  "client_id": "110848552218997749918",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/normaluser%40genshin-companion-deffd.iam.gserviceaccount.com"
+}
